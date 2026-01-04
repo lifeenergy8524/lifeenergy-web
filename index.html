@@ -11,10 +11,11 @@
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; scroll-behavior: smooth; word-break: keep-all;}
         .hero-bg {
-            /* 어두운 필터를 0.6 -> 0.2로 확 줄여서 밝게 만듦 */
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');
+            /* 핵심 수정: 이미지를 바닥(bottom) 기준으로 고정해서 태양광 패널이 항상 보이게 함 */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; 
-            background-position: center;
+            background-position: center bottom; /* 여기가 핵심! center -> center bottom으로 변경 */
+            background-attachment: scroll; /* 모바일 호환성 위해 scroll로 설정 */
         }
     </style>
 </head>
@@ -39,13 +40,14 @@
 
     <section id="home" class="hero-bg h-screen flex flex-col justify-center items-center text-white text-center px-4 pt-20">
         <span class="inline-block mb-4 text-green-400 font-bold tracking-wider text-sm uppercase">Total Renewable Energy Solution</span>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">For the Next</h1>
-        <p class="text-lg md:text-xl max-w-3xl font-light leading-relaxed mb-10 text-gray-100">
-            라이프에너지(주)는 기본과 원칙을 준수하며, <br class="md:hidden">고객과 미래의 인생을 함께하는 <strong>태양광 발전사업 파트너</strong>입니다.
+        
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight drop-shadow-md">For the Next</h1>
+        <p class="text-lg md:text-xl max-w-3xl font-medium leading-relaxed mb-10 text-white drop-shadow-sm">
+            라이프에너지(주)는 기본과 원칙을 준수하며, <br class="md:hidden">고객의 이익을 극대화하는 <strong>태양광 발전사업 파트너</strong>입니다.
         </p>
         <div class="flex gap-4">
             <a href="#services" class="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg font-bold transition shadow-lg">사업분야 보기</a>
-            <a href="#contact" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white text-white rounded-lg font-bold transition">문의하기</a>
+            <a href="#contact" class="px-8 py-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white text-white rounded-lg font-bold transition">문의하기</a>
         </div>
     </section>
 
@@ -162,8 +164,8 @@
                         라이프에너지가 영업, 사업 담당자와의 긴밀한 소통을 통해 신속하게 처리합니다.
                     </p>
                     <div class="bg-white/5 p-6 rounded-xl border border-white/10">
-                        <h4 class="font-bold text-lg mb-2"><i class="fas fa-recycle mr-2 text-green-500"></i> 에너지 리사이클링</h4>
-                        <p class="text-sm text-gray-400">발전소 철거 자재를 재활용하여 환경을 보호하고 새로운 가치를 창출하는 신성장 사업도 함께합니다.</p>
+                        <h4 class="font-bold text-lg mb-2"><i class="fas fa-recycle mr-2 text-green-500"></i> 에너지 솔루션 전문가</h4>
+                        <p class="text-sm text-gray-400">태양광 발전소 시작과 끝까지 새로운 가치를 창출하는 사업을 함께합니다.</p>
                     </div>
                 </div>
                 <div class="space-y-6">
@@ -204,7 +206,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 <div>
-                    <img src="로고가로_한글.png" alt="라이프에너지 로고" class="h-10 mb-6">
+                    <img src="logo.png" alt="라이프에너지 로고" class="h-10 mb-6">
                     <p class="text-gray-600 leading-relaxed max-w-sm mb-6">
                         지속 가능한 미래를 위한 에너지 파트너.<br>
                         최적의 기술과 금융 솔루션으로 고객의 성공을 돕습니다.
@@ -254,6 +256,3 @@
 
 </body>
 </html>
-
-
-
