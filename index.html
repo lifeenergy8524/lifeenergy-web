@@ -11,11 +11,24 @@
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; scroll-behavior: smooth; word-break: keep-all;}
         .hero-bg {
-            /* 핵심 수정: 이미지를 바닥(bottom) 기준으로 고정해서 태양광 패널이 항상 보이게 함 */
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; 
-            background-position: center bottom; /* 여기가 핵심! center -> center bottom으로 변경 */
-            background-attachment: scroll; /* 모바일 호환성 위해 scroll로 설정 */
+            background-position: center bottom;
+            background-attachment: scroll;
+        }
+        /* 파트너 로고 흑백 처리 (마우스 올리면 컬러) */
+        .partner-logo {
+            height: 40px; 
+            width: auto;
+            object-fit: contain;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+        }
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -40,7 +53,6 @@
 
     <section id="home" class="hero-bg h-screen flex flex-col justify-center items-center text-white text-center px-4 pt-20">
         <span class="inline-block mb-4 text-green-400 font-bold tracking-wider text-sm uppercase">Total Renewable Energy Solution</span>
-        
         <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight drop-shadow-md">For the Next</h1>
         <p class="text-lg md:text-xl max-w-3xl font-medium leading-relaxed mb-10 text-white drop-shadow-sm">
             라이프에너지(주)는 기본과 원칙을 준수하며, <br class="md:hidden">고객의 이익을 극대화하는 <strong>태양광 발전사업 파트너</strong>입니다.
@@ -141,18 +153,6 @@
         </div>
     </section>
 
-    <section class="py-16 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-400 font-semibold mb-8 tracking-widest text-sm">TRUSTED PARTNERS</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
-                <span class="text-2xl font-bold text-gray-700">TotalEnergies</span>
-                <span class="text-2xl font-bold text-gray-700">현대글로벌</span>
-                <span class="text-2xl font-bold text-gray-700">한국전력공사</span>
-                <span class="text-2xl font-bold text-gray-700">한국에너지공단</span>
-            </div>
-        </div>
-    </section>
-
     <section id="process" class="py-24 bg-slate-900 text-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -164,8 +164,8 @@
                         라이프에너지가 영업, 사업 담당자와의 긴밀한 소통을 통해 신속하게 처리합니다.
                     </p>
                     <div class="bg-white/5 p-6 rounded-xl border border-white/10">
-                        <h4 class="font-bold text-lg mb-2"><i class="fas fa-recycle mr-2 text-green-500"></i> 에너지 솔루션 전문가</h4>
-                        <p class="text-sm text-gray-400">태양광 발전소 시작과 끝까지 새로운 가치를 창출하는 사업을 함께합니다.</p>
+                        <h4 class="font-bold text-lg mb-2"><i class="fas fa-recycle mr-2 text-green-500"></i> 에너지 리사이클링</h4>
+                        <p class="text-sm text-gray-400">발전소 철거 자재를 재활용하여 환경을 보호하고 새로운 가치를 창출하는 신성장 사업도 함께합니다.</p>
                     </div>
                 </div>
                 <div class="space-y-6">
@@ -198,6 +198,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-400 font-semibold mb-8 tracking-widest text-sm">TRUSTED PARTNERS</p>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+                <img src="logo_total.png" alt="TotalEnergies" class="partner-logo">
+                <img src="logo_hyundai.png" alt="현대글로벌" class="partner-logo">
+                <img src="logo_kepco.png" alt="한국전력공사" class="partner-logo">
+                <img src="logo_kea.png" alt="한국에너지공단" class="partner-logo">
+                <img src="logo_solum.png" alt="솔루엠" class="partner-logo">
+                <img src="logo_equis.png" alt="에퀴스" class="partner-logo">
             </div>
         </div>
     </section>
